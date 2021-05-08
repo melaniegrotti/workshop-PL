@@ -87,6 +87,7 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin}</version>
+                <groupId>org.apache.maven.plugins</groupId>
                 <configuration>
                     <includes>
                         <include>**/Test*.java</include>
