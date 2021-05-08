@@ -65,3 +65,15 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 * https://github.com/pitest/pitest-junit5-plugin
   - https://mvnrepository.com/artifact/org.pitest/pitest-junit5-plugin
     - required to work with JUnit5
+
+# Test Überlegungen
+...
+## bookmark a URL
+--> URL is addable
+#### Test ensure that we can add URL to URLlist
+1. URL https://www.google.com is addable to listURL
+
+...
+### URL must be valid
+--> the parts that make up an URL must be there
+--> the URL validator class helps with identifying that 
