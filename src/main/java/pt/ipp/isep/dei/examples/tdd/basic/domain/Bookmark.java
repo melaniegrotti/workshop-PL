@@ -2,18 +2,27 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Bookmark {
 
-    public boolean validate(String stringForUrl){
+    List <URL> urlList = new ArrayList<URL>();
 
-        try {
+    String url1 = "https://www.britannica.com/animal/hamster";
+    String url2 = "https://en.wikipedia.org/wiki/Hamster";
+    String url3 = "https://www.livescience.com/27169-hamsters.html";
+
+
+
+    public boolean validate(String stringForUrl) throws MalformedURLException {
             URL urlToTest = new URL(stringForUrl);
             return true;
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            return false;
-        }
+
+    }
+
+    public void addURLToList(URL urlForList) throws MalformedURLException {
+
     }
 
 }
