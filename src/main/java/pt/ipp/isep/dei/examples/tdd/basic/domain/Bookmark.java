@@ -2,7 +2,6 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Bookmark {
