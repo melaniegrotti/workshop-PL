@@ -7,22 +7,14 @@ import java.util.List;
 
 public class Bookmark {
 
-    List <URL> urlList = new ArrayList<URL>();
-
-    String url1 = "https://www.britannica.com/animal/hamster";
-    String url2 = "https://en.wikipedia.org/wiki/Hamster";
-    String url3 = "https://www.livescience.com/27169-hamsters.html";
-
-
-
     public boolean validate(String stringForUrl) throws MalformedURLException {
-            URL urlToTest = new URL(stringForUrl);
-            return true;
-
+        URL urlToTest = new URL(stringForUrl);
+        return true;
     }
 
-    public void addURLToList(URL urlForList) throws MalformedURLException {
-
+    public void addURLToList(URL urlForList, List<URL> urlList1) throws MalformedURLException {
+        urlList1.add(urlForList);
     }
+
 
 }
