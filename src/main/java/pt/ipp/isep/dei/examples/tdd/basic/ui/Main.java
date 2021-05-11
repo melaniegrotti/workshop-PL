@@ -57,6 +57,9 @@ public class Main {
             System.out.println("Invalid Input");
         }
 
+        //Searching a Tagged URL
+        URL searchedURL = bookmark.findingATaggedURL(hashMap, tag1);
+        System.out.println("The URL you searched for is " + searchedURL);
 
 
     }
