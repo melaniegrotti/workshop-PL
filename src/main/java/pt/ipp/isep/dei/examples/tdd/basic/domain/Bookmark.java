@@ -2,6 +2,7 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 
 public class Bookmark {
@@ -13,6 +14,10 @@ public class Bookmark {
 
     public void addURLToList(URL urlForList, List<URL> urlList1) throws MalformedURLException {
         urlList1.add(urlForList);
+    }
+
+    public void addTagToUrl(URL urlForHashMap, String tag){
+        //
     }
 
 
