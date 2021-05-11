@@ -1,6 +1,7 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -83,6 +84,10 @@ public class BookmarkTest {
         //Assert
         assertEquals(expectedResult, result);
     }
+
+    @ParameterizedTest
+
+
 
     @Test
     public void ensureFindingATaggedUrlWorks() throws MalformedURLException {

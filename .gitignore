@@ -184,3 +184,5 @@ nbactions.xml
 tdd-basic-example.iml
 
 .idea/vcs.xml
+
+*.iml

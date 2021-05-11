@@ -16,11 +16,11 @@ public class Bookmark {
         urlList1.add(urlForList);
     }
 
-    public void addTagToUrl(HashMap hashMap, URL urlForHashMap, String tag){
+    public void addTagToUrl(HashMap<String, URL> hashMap, URL urlForHashMap, String tag){
         hashMap.put(tag, urlForHashMap);
     }
 
-    public URL findingATaggedURL(HashMap hashMap, String tag){
+    public URL findingATaggedURL(HashMap<String, URL> hashMap, String tag){
         URL urlFound = null;
         urlFound = (URL)hashMap.get(tag);
         return urlFound;
