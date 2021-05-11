@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -64,5 +65,25 @@ public class BookmarkTest {
         //Assert
         assertEquals(expectedResult, result);
     }
+
+    // put, get for HashMap
+    @Test
+    public void ensureAddingATagToUrlWorks() throws MalformedURLException {
+        //Arrange
+        HashMap<String, URL> hashMapTest = new HashMap<String, URL>();
+        String tagTest = "Hamster";
+        URL urltest = new URL("https://en.wikipedia.org/wiki/Hamster");
+        int expectedResult = 1; // sizeOf()
+
+        //Act
+        Bookmark bookmark = new Bookmark();
+        bookmark.addTagToUrl(urltest, tagTest);
+        int result = hashMapTest.size();
+
+        //Assert
+        assertEquals(expectedResult, result);
+    }
+
+
 }
 
