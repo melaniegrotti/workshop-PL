@@ -22,7 +22,7 @@ public class Bookmark {
 
     public URL findingATaggedURL(HashMap hashMap, String tag){
         URL urlFound = null;
-
+        urlFound = (URL)hashMap.get(tag);
         return urlFound;
     }
 
