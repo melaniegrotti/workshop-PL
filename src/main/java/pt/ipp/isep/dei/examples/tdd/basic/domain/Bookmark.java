@@ -20,5 +20,10 @@ public class Bookmark {
         hashMap.put(tag, urlForHashMap);
     }
 
+    public URL findingATaggedURL(HashMap hashMap, String tag){
+        URL urlFound = null;
+
+        return urlFound;
+    }
 
 }
