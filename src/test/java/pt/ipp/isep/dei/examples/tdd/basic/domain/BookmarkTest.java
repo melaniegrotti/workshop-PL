@@ -84,6 +84,23 @@ public class BookmarkTest {
         assertEquals(expectedResult, result);
     }
 
+    @Test
+    public void ensureFindingATaggedUrlWorks() throws MalformedURLException {
+        //Arrange
+        HashMap<String, URL> testingHashMap = new HashMap<String, URL>();
+        String tagTest = "PetCare";
+        URL urlTest = new URL("https://en.wikipedia.org/wiki/Hamster");
+        testingHashMap.put(tagTest, urlTest);
+        URL expectedResult =  new URL("https://en.wikipedia.org/wiki/Hamster");
+
+        //Act
+        Bookmark bookmark = new Bookmark();
+        URL result = bookmark.findingATaggedURL(testingHashMap, tagTest);
+
+        //Assert
+        assertEquals(expectedResult, result);
+
+    }
 
 }
 
