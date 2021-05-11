@@ -77,7 +77,7 @@ public class BookmarkTest {
 
         //Act
         Bookmark bookmark = new Bookmark();
-        bookmark.addTagToUrl(urltest, tagTest);
+        bookmark.addTagToUrl(hashMapTest, urltest, tagTest);
         int result = hashMapTest.size();
 
         //Assert

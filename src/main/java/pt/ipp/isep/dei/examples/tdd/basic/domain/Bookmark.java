@@ -16,8 +16,8 @@ public class Bookmark {
         urlList1.add(urlForList);
     }
 
-    public void addTagToUrl(URL urlForHashMap, String tag){
-        //
+    public void addTagToUrl(HashMap hashMap, URL urlForHashMap, String tag){
+        hashMap.put(tag, urlForHashMap);
     }
 
 
