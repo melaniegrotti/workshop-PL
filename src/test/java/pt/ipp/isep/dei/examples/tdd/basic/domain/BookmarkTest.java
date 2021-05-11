@@ -2,6 +2,7 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,28 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BookmarkTest {
-
-    // Integration Test?
-    /*String protocol = "http";
-        String host = "opera.org.au";
-        String file = "/whats-on/brisbane";
-        */
-
-    /*  @Test
-        public void ensureBookmarkCanBeAdded() {
-        //Arrange
-        List<URL> expectedURLList = new ArrayList<>();
-        try {
-            URL ausOpera = new URL("http", "opera.org.au", "/whats-on/brisbane/");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        //Act
-        expectedURLList.add();
-
-        //Assert
-    } */
 
     @Test
     public void ensureURLIsValid() throws MalformedURLException {
@@ -49,6 +28,16 @@ public class BookmarkTest {
         assertTrue(result);
 
     }
+
+    @ParameterizedTest
+    @ValueSource(strings= {"http://opera.org.au/whats-on/brisbane", "https://en.wikipedia.org/wiki/Guinea_pig", "https://www.fisheries.noaa.gov/species/hawksbill-turtle"})
+    public void ensureURLIsValidParamTest(String testString) throws MalformedURLException{
+        //Act
+        boolean result = new Bookmark().validate(testString);
+        //Assert
+        assertTrue(result);
+    }
+
 
     @Test
     public void ensureAddUrlToListWorks() throws MalformedURLException {
@@ -84,9 +73,6 @@ public class BookmarkTest {
         //Assert
         assertEquals(expectedResult, result);
     }
-
-    @ParameterizedTest
-
 
 
     @Test
