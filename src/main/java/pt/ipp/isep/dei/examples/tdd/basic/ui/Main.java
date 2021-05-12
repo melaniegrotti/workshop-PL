@@ -16,7 +16,8 @@ public class Main {
         //System.out.println(calculator.sum(3, 4));
         Bookmark bookmark = new Bookmark();
         List<URL> urlList = new ArrayList<URL>();
-        HashMap<String, URL> hashMap = new HashMap<String, URL>();
+        //HashMap<String, HashMap> hashMap = new HashMap<String, HashMap>();
+        HashMap<String, URL> hashMap = new HashMap<String, URL>(); //umzubenennen
 
         // VALIDATE URL
         String url1 = "https://www.britannica.com/animal/hamster";
