@@ -26,4 +26,9 @@ public class Bookmark {
         return urlFound;
     }
 
+    public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating ){
+        ratingHash.put(url, rating);
+        urlHash.put(tag, ratingHash);
+    }
+
 }

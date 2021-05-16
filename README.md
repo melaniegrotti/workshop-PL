@@ -77,3 +77,13 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 ### URL must be valid
 --> the parts that make up an URL must be there
 --> the URL validator class helps with identifying that 
+
+
+### Rating 
+--> Rating steht in einer Hashmap wo die URL der key ist, und das Rating erhöht wird
+
+--> Url-Hashmap: key= tag und ausgebaut wird Url = value --> Rating Hashmap = value   
+
+URL Hashmap bekommt die Rating-Hashmap als Entries 
+--> fürs Rating abfrage der Url-Hashmap ob URL schon vorhanden  
+--> wenn Ja muss int rating im richtigen Eintrag erhöht werden
