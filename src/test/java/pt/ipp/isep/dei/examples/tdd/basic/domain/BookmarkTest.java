@@ -4,8 +4,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import javax.print.DocFlavor;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -91,6 +93,26 @@ public class BookmarkTest {
         //Assert
         assertEquals(expectedResult, result);
 
+    }
+
+    @Test
+    //testing that the hashmap rating can be put into the hashmap URL
+    public void ensureAddingRatingHashmapToUrlHashmapWorks() throws MalformedURLException{
+        //Arrange
+        HashMap<String, HashMap<URL, Integer>> testingHashInHash = new HashMap<String, HashMap<URL, Integer>>();
+        HashMap <URL, Integer> testingRatingHash = new HashMap<URL, Integer>();
+        String testingTag = "hamsterCare";
+        URL testingUrl = new URL("https://en.wikipedia.org/wiki/Hamster");
+        Integer testingRating = 0;
+        int expectedResult = 1;
+
+        //Act
+        Bookmark bookmark = new Bookmark();
+        bookmark.addHashToHash(testingHashInHash, testingTag, testingRatingHash, testingUrl, testingRating);
+        int result = testingHashInHash.size();
+
+        //Assert
+        assertEquals(expectedResult, result);
     }
 
 }
