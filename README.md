@@ -87,3 +87,8 @@ mvn test jacoco:report org.pitest:pitest-maven:mutationCoverage -DhistoryInputFi
 URL Hashmap bekommt die Rating-Hashmap als Entries 
 --> fürs Rating abfrage der Url-Hashmap ob URL schon vorhanden  
 --> wenn Ja muss int rating im richtigen Eintrag erhöht werden
+###above works
+
+--> we need to find existing entries --> if that is true we need to return the tag
+--> with the tag we can find the url already excisting, and with the URL we can increas the rating
+

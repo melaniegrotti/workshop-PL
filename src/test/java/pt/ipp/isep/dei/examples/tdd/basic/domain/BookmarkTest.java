@@ -115,5 +115,51 @@ public class BookmarkTest {
         assertEquals(expectedResult, result);
     }
 
+    @Test
+    public void checkIfUrlEntryAlreadExistsWorks() throws MalformedURLException{
+        //Arrange
+        HashMap<String, HashMap<URL, Integer>> testingHashInHash = new HashMap<String, HashMap<URL, Integer>>();
+        HashMap <URL, Integer> testingRatingHash = new HashMap<URL, Integer>();
+        String testingTag = "hamsterCare";
+        URL testingUrl = new URL("https://en.wikipedia.org/wiki/Hamster");
+        URL testingUrl2 = new URL("https://en.wikipedia.org/wiki/Hamster");
+        Integer testingRating = 0;
+        String expectedResult ="hamsterCare";
+
+        testingRatingHash.put(testingUrl, testingRating);
+        testingHashInHash.put(testingTag, testingRatingHash);
+
+        //Act
+        Bookmark bookmark = new Bookmark();
+        String result = bookmark.urlAlreadyExists(testingHashInHash, testingRatingHash, testingUrl2);
+
+        //Assert
+        assertEquals(expectedResult, result);
+
+    }
+
+
+  /**  @Test
+    public void ensureUpdateRatingWorks() throws MalformedURLException{
+        //Arrange
+        HashMap<String, HashMap<URL, Integer>> testingHashInHash = new HashMap<String, HashMap<URL, Integer>>();
+        HashMap <URL, Integer> testingRatingHash = new HashMap<URL, Integer>();
+        String testingTag = "hamsterCare";
+        URL testingUrl = new URL("https://en.wikipedia.org/wiki/Hamster");
+        URL testingUrl2 = new URL("https://en.wikipedia.org/wiki/Hamster");
+        Integer testingRating = 0;
+        testingRatingHash.put(testingUrl, testingRating);
+        testingHashInHash.put(testingTag, testingRatingHash);
+
+        Integer expectedResult = 1;
+
+        //Act
+        Bookmark bookmark = new Bookmark();
+        Integer result = bookmark.increaseRating(testingHashInHash, testingRatingHash, testTag);
+
+        //Assert
+        assertEquals(result, expectedResult);
+
+    } **/
 }
 

@@ -16,19 +16,37 @@ public class Bookmark {
         urlList1.add(urlForList);
     }
 
-    public void addTagToUrl(HashMap<String, URL> hashMap, URL urlForHashMap, String tag){
+    public void addTagToUrl(HashMap<String, URL> hashMap, URL urlForHashMap, String tag) {
         hashMap.put(tag, urlForHashMap);
     }
 
-    public URL findingATaggedURL(HashMap<String, URL> hashMap, String tag){
+    public URL findingATaggedURL(HashMap<String, URL> hashMap, String tag) {
         URL urlFound = null;
-        urlFound = (URL)hashMap.get(tag);
+        urlFound = (URL) hashMap.get(tag);
         return urlFound;
     }
 
-    public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating ){
+    public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating) {
         ratingHash.put(url, rating);
         urlHash.put(tag, ratingHash);
     }
 
+    public String urlAlreadyExists(HashMap<String, HashMap<URL, Integer>> urlHash, HashMap<URL, Integer> ratingHash, URL url) {
+        String tag = null;
+
+        if (ratingHash.containsKey(url)) {
+            urlHash.get(tag);
+            return tag;
+        }
+        return null;
+
+
+    }
+
+    /** public Integer increaseRating(HashMap<String, HashMap<URL, Integer>> urlHash, HashMap<URL, Integer> ratingHash) {
+
+     ratingHash.
+
+     return Integer;
+     } **/
 }
