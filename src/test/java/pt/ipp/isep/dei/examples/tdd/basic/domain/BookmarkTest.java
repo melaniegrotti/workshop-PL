@@ -94,7 +94,42 @@ public class BookmarkTest {
         assertEquals(expectedResult, result);
 
     }
+    @Test
+    public void ensureAddingRatingToUrlWorks() throws MalformedURLException {
+        //Arrange
+        HashMap<URL, Integer> hashMapTest = new HashMap<URL, Integer>();
+        URL urltest = new URL("https://en.wikipedia.org/wiki/Hamster");
+        Integer testInt = 0;
+        int expectedResult = 1;
 
+        //Act
+        Bookmark bookmark = new Bookmark();
+        bookmark.addRatingToUrl(hashMapTest, urltest, testInt);
+        int result = hashMapTest.size();
+
+        //Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureIncreaseRatingWorks() throws MalformedURLException {
+        //Arrange
+        HashMap<URL, Integer> hashMapTest = new HashMap<URL, Integer>();
+        URL urltest = new URL("https://en.wikipedia.org/wiki/Hamster");
+        Integer testInt = 0;
+        Integer expectedResult = 1;
+        hashMapTest.put(urltest, testInt);
+
+        //Act
+        Bookmark bookmark = new Bookmark();
+        bookmark.increaseRating(hashMapTest, urltest);
+        Integer result= hashMapTest.get(urltest);
+
+        //Assert
+        assertEquals(result, expectedResult);
+    }
+
+    /**
     @Test
     //testing that the hashmap rating can be put into the hashmap URL
     public void ensureAddingRatingHashmapToUrlHashmapWorks() throws MalformedURLException{
@@ -113,8 +148,9 @@ public class BookmarkTest {
 
         //Assert
         assertEquals(expectedResult, result);
-    }
+    } **/
 
+    /**
     @Test
     public void checkIfUrlEntryAlreadExistsWorks() throws MalformedURLException{
         //Arrange
@@ -124,6 +160,7 @@ public class BookmarkTest {
         URL testingUrl = new URL("https://en.wikipedia.org/wiki/Hamster");
         URL testingUrl2 = new URL("https://en.wikipedia.org/wiki/Hamster");
         Integer testingRating = 0;
+        boolean exists = false;
         String expectedResult ="hamsterCare";
 
         testingRatingHash.put(testingUrl, testingRating);
@@ -136,7 +173,7 @@ public class BookmarkTest {
         //Assert
         assertEquals(expectedResult, result);
 
-    }
+    } **/
 
 
   /**  @Test

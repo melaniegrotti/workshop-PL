@@ -92,3 +92,12 @@ URL Hashmap bekommt die Rating-Hashmap als Entries
 --> we need to find existing entries --> if that is true we need to return the tag
 --> with the tag we can find the url already excisting, and with the URL we can increas the rating
 
+
+Entrypoint: addHashtoHash --> Url already exists () deletes entry --> tag --> ratingIncrease () --> rating++
+
+## Rating 2nd atemped 
+first attemped got to convoluted 
+we now decided to have to hashmaps that were NOT linked: an URL-hashmap that would keep the urls as value and the tags 
+as keys; and a rating hashmap that would keep the url as key and the rating as value; 
+for the user it will make no difference, but for us in the backend it will be a lot easier 
+

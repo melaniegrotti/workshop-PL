@@ -26,25 +26,33 @@ public class Bookmark {
         return urlFound;
     }
 
+    public void addRatingToUrl(HashMap<URL, Integer> ratingHash, URL url, Integer rating) {
+        ratingHash.put(url, rating);
+    }
 
+    public void increaseRating(HashMap<URL, Integer> ratingHash, URL url) {
+        //increase the rating 
+    }
+
+
+    /**
     public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating ){
 
         ratingHash.put(url, rating);
         urlHash.put(tag, ratingHash);
-    }
+    } **/
 
-
+    /**
     public String urlAlreadyExists(HashMap<String, HashMap<URL, Integer>> urlHash, HashMap<URL, Integer> ratingHash, URL url) {
-        String tag = null;
 
         if (ratingHash.containsKey(url)) {
-            urlHash.get(tag);
+
             return tag;
         }
         return null;
 
 
-    }
+    }**/
 
     /** public Integer increaseRating(HashMap<String, HashMap<URL, Integer>> urlHash, HashMap<URL, Integer> ratingHash) {
 
