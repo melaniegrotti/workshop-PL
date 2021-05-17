@@ -40,7 +40,9 @@ public class Main {
             bookmark.addURLToList(url11, urlList);
             bookmark.addURLToList(url22, urlList);
             bookmark.addURLToList(url33, urlList);
+            System.out.println("...");
             System.out.println(urlList);
+            System.out.println("...");
         } catch (MalformedURLException e){
             System.out.println("Invalid URL");
         }
@@ -53,14 +55,34 @@ public class Main {
             URL urlForTag2 = new URL("http://opera.org.au/whats-on/brisbane");
             bookmark.addTagToUrl(hashMap, urlForTag1, tag1);
             bookmark.addTagToUrl(hashMap, urlForTag2, tag2);
+            System.out.println("..");
             System.out.println(hashMap);
+            System.out.println("..");
         }catch (MalformedURLException e){
             System.out.println("Invalid Input");
         }
 
         //Searching a Tagged URL
         URL searchedURL = bookmark.findingATaggedURL(hashMap, tag1);
+        System.out.println("..");
         System.out.println("The URL you searched for is " + searchedURL);
+        System.out.println("..");
+
+        // RATING
+        HashMap<String, HashMap<URL, Integer>> urlHash = new HashMap<String, HashMap<URL, Integer>>();
+        HashMap<URL, Integer> ratingHash = new HashMap<URL, Integer>();
+        Integer rating1 = 0;
+        System.out.println("..");
+
+        try {
+            URL urlForTag1 = new URL("https://www.britannica.com/animal/hamster");
+            ratingHash.put(urlForTag1, rating1);
+            System.out.println("..");
+            System.out.print(ratingHash);
+        }catch (MalformedURLException e){
+            System.out.println("Invalid Input");
+        }
+
 
 
     }
