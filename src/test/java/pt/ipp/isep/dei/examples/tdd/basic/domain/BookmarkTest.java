@@ -115,7 +115,6 @@ public class BookmarkTest {
         assertEquals(expectedResult, result);
     }
 
-<<<<<<< HEAD
     @Test
     public void checkIfUrlEntryAlreadExistsWorks() throws MalformedURLException{
         //Arrange
@@ -162,7 +161,6 @@ public class BookmarkTest {
         assertEquals(result, expectedResult);
 
     } **/
-=======
->>>>>>> master
+
 }
 

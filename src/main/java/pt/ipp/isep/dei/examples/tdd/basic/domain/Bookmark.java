@@ -26,16 +26,14 @@ public class Bookmark {
         return urlFound;
     }
 
-<<<<<<< HEAD
-    public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating) {
-=======
+
     public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating ){
->>>>>>> master
+
         ratingHash.put(url, rating);
         urlHash.put(tag, ratingHash);
     }
 
-<<<<<<< HEAD
+
     public String urlAlreadyExists(HashMap<String, HashMap<URL, Integer>> urlHash, HashMap<URL, Integer> ratingHash, URL url) {
         String tag = null;
 
@@ -54,6 +52,5 @@ public class Bookmark {
 
      return Integer;
      } **/
-=======
->>>>>>> master
+
 }
