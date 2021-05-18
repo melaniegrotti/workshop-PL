@@ -31,7 +31,10 @@ public class Bookmark {
     }
 
     public void increaseRating(HashMap<URL, Integer> ratingHash, URL url) {
-        //increase the rating 
+        Integer increaseRating =  ratingHash.get(url);
+        ratingHash.remove(url);
+        increaseRating++;
+        ratingHash.put(url, increaseRating);
     }
 
 
