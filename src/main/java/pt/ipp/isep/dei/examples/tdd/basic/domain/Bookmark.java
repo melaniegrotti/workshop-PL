@@ -3,7 +3,9 @@ package pt.ipp.isep.dei.examples.tdd.basic.domain;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class Bookmark {
 
@@ -35,6 +37,19 @@ public class Bookmark {
         ratingHash.remove(url);
         increaseRating++;
         ratingHash.put(url, increaseRating);
+    }
+
+    public URL findingDuplicateUrl(HashMap<String, URL> urlHashMap, URL url) {
+        URL urlFound = null;
+
+        for (Iterator<Map.Entry<String, URL>> iterator = urlHashMap.entrySet().iterator(); iterator.hasNext();) {
+            Map.Entry<String, URL> pair = iterator.next();
+            if (url == pair.getValue()) {
+                urlFound = pair.getValue();
+                return urlFound;
+            }
+        }
+        return urlFound;
     }
 
 

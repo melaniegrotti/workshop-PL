@@ -129,6 +129,24 @@ public class BookmarkTest {
         assertEquals(result, expectedResult);
     }
 
+    @Test
+    public void checkIfUrlExists() throws MalformedURLException {
+        //Arrange
+        HashMap<String, URL> testingHashMap = new HashMap<String, URL>();
+        String tagTest = "PetCare";
+        URL urlTest = new URL("https://en.wikipedia.org/wiki/Hamster");
+        testingHashMap.put(tagTest, urlTest);
+        URL expectedResult =  new URL("https://en.wikipedia.org/wiki/Hamster");
+
+        //Act
+        Bookmark bookmark = new Bookmark();
+        URL result = bookmark.findingDuplicateUrl(testingHashMap, urlTest);
+
+        //Assert
+        assertEquals(expectedResult, result);
+
+    }
+
     /**
     @Test
     //testing that the hashmap rating can be put into the hashmap URL

@@ -18,6 +18,7 @@ public class Main {
         List<URL> urlList = new ArrayList<URL>();
         //HashMap<String, HashMap> hashMap = new HashMap<String, HashMap>();
         HashMap<String, URL> hashMap = new HashMap<String, URL>(); //umzubenennen
+        HashMap<URL, Integer> ratingHash = new HashMap<URL, Integer>();
 
         // VALIDATE URL
         String url1 = "https://www.britannica.com/animal/hamster";
@@ -48,12 +49,22 @@ public class Main {
         // ADD KEY + VALUE TO HASHMAP
         String tag1 = "PetCare";
         String tag2 = "Culture";
+        Integer currentRating = 0;
         try {
             URL urlForTag1 = new URL("https://www.britannica.com/animal/hamster");
             URL urlForTag2 = new URL("http://opera.org.au/whats-on/brisbane");
             bookmark.addTagToUrl(hashMap, urlForTag1, tag1);
             bookmark.addTagToUrl(hashMap, urlForTag2, tag2);
             System.out.println(hashMap);
+            bookmark.addRatingToUrl(ratingHash, urlForTag1, currentRating);
+            URL toBeAddedUrl = bookmark.findingDuplicateUrl(hashMap, urlForTag1);
+            if (toBeAddedUrl != null){
+                bookmark.increaseRating(ratingHash, toBeAddedUrl);
+            } else {
+                bookmark.addTagToUrl(hashMap, toBeAddedUrl, tag1);
+            }
+            System.out.println("..");
+            System.out.print("UrlHasMap: " + hashMap + "\nRatingHashMap:" + ratingHash);
         } catch (MalformedURLException e) {
             System.out.println("Invalid Input");
         }
