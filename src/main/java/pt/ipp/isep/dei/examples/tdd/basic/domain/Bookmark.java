@@ -52,6 +52,17 @@ public class Bookmark {
         return urlFound;
     }
 
+    public int urlIsSecure(HashMap<String, URL> urlHashMap) {
+        int countSecureUrls = 0;
+        for (Iterator<Map.Entry<String, URL>> iterator = urlHashMap.entrySet().iterator(); iterator.hasNext();) {
+            Map.Entry<String, URL> pair = iterator.next();
+            if ("https" == pair.getValue().getProtocol()) {
+               countSecureUrls++;
+            }
+        }
+        return countSecureUrls;
+    }
+
 
     /**
     public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating ){

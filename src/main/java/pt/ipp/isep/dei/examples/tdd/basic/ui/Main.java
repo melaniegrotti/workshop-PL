@@ -57,14 +57,22 @@ public class Main {
             bookmark.addTagToUrl(hashMap, urlForTag2, tag2);
             System.out.println(hashMap);
             bookmark.addRatingToUrl(ratingHash, urlForTag1, currentRating);
+
+            // LOOK FOR DUPLICATES
             URL toBeAddedUrl = bookmark.findingDuplicateUrl(hashMap, urlForTag1);
             if (toBeAddedUrl != null){
+                // INCREASE RATING
                 bookmark.increaseRating(ratingHash, toBeAddedUrl);
             } else {
                 bookmark.addTagToUrl(hashMap, toBeAddedUrl, tag1);
             }
             System.out.println("..");
             System.out.print("UrlHasMap: " + hashMap + "\nRatingHashMap:" + ratingHash);
+
+            // SECURE
+            int countSecure = bookmark.urlIsSecure(hashMap);
+            System.out.println("Number of secure URLs is: " + countSecure);
+
         } catch (MalformedURLException e) {
             System.out.println("Invalid Input");
         }
