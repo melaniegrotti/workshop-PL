@@ -33,7 +33,7 @@ public class Bookmark {
     }
 
     public void increaseRating(HashMap<URL, Integer> ratingHash, URL url) {
-        Integer increaseRating =  ratingHash.get(url);
+        Integer increaseRating = ratingHash.get(url);
         ratingHash.remove(url);
         increaseRating++;
         ratingHash.put(url, increaseRating);
@@ -42,7 +42,7 @@ public class Bookmark {
     public URL findingDuplicateUrl(HashMap<String, URL> urlHashMap, URL url) {
         URL urlFound = null;
 
-        for (Iterator<Map.Entry<String, URL>> iterator = urlHashMap.entrySet().iterator(); iterator.hasNext();) {
+        for (Iterator<Map.Entry<String, URL>> iterator = urlHashMap.entrySet().iterator(); iterator.hasNext(); ) {
             Map.Entry<String, URL> pair = iterator.next();
             if (url == pair.getValue()) {
                 urlFound = pair.getValue();
@@ -54,34 +54,51 @@ public class Bookmark {
 
     public int urlIsSecure(HashMap<String, URL> urlHashMap) {
         int countSecureUrls = 0;
-        for (Iterator<Map.Entry<String, URL>> iterator = urlHashMap.entrySet().iterator(); iterator.hasNext();) {
+        for (Iterator<Map.Entry<String, URL>> iterator = urlHashMap.entrySet().iterator(); iterator.hasNext(); ) {
             Map.Entry<String, URL> pair = iterator.next();
-            if ("https" == pair.getValue().getProtocol()) {
-               countSecureUrls++;
+            if (pair.getValue().getProtocol().equals("https")) {
+                countSecureUrls++;
             }
         }
         return countSecureUrls;
+
     }
 
+    public boolean removeTag(HashMap<String, URL> urlHash, URL url) {
+        boolean tagRemoved = false;
+        String savedTag;
+
+        for (Iterator<Map.Entry<String, URL>> iterator = urlHash.entrySet().iterator(); iterator.hasNext(); ) {
+            Map.Entry<String, URL> pair = iterator.next();
+            if (url == pair.getValue()) {
+                savedTag = pair.getKey();
+                urlHash.remove(savedTag, url);
+                urlHash.put("untagged", url);
+                tagRemoved = true;
+                return tagRemoved;
+            }
+
+        } return false;
+    }
 
     /**
-    public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating ){
+     public void addHashToHash(HashMap<String, HashMap<URL, Integer>> urlHash, String tag, HashMap<URL, Integer> ratingHash, URL url, Integer rating ){
 
-        ratingHash.put(url, rating);
-        urlHash.put(tag, ratingHash);
-    } **/
+     ratingHash.put(url, rating);
+     urlHash.put(tag, ratingHash);
+     } **/
 
     /**
-    public String urlAlreadyExists(HashMap<String, HashMap<URL, Integer>> urlHash, HashMap<URL, Integer> ratingHash, URL url) {
+     public String urlAlreadyExists(HashMap<String, HashMap<URL, Integer>> urlHash, HashMap<URL, Integer> ratingHash, URL url) {
 
-        if (ratingHash.containsKey(url)) {
+     if (ratingHash.containsKey(url)) {
 
-            return tag;
-        }
-        return null;
+     return tag;
+     }
+     return null;
 
 
-    }**/
+     }**/
 
     /** public Integer increaseRating(HashMap<String, HashMap<URL, Integer>> urlHash, HashMap<URL, Integer> ratingHash) {
 

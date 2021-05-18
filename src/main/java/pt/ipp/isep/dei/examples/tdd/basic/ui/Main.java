@@ -73,6 +73,10 @@ public class Main {
             int countSecure = bookmark.urlIsSecure(hashMap);
             System.out.println("Number of secure URLs is: " + countSecure);
 
+            //REMOVE TAG
+            bookmark.removeTag(hashMap, urlForTag1);
+            System.out.println("Hashmap after removing tag" + hashMap);
+
         } catch (MalformedURLException e) {
             System.out.println("Invalid Input");
         }

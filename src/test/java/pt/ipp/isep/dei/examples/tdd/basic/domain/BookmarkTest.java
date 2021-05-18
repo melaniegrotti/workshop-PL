@@ -160,9 +160,23 @@ public class BookmarkTest {
         Bookmark bookmark = new Bookmark();
         int result = bookmark.urlIsSecure(testingHashMap);
 
-        // Arrange
+        // Assert
         assertEquals(expectedResult, result);
     }
+    @Test
+    public void checkRemoveTagWorks() throws MalformedURLException {
+        // Arrange
+        HashMap<String, URL> testingHashMap = new HashMap<String, URL>();
+        String tagTest = "PetCare";
+        URL urlTest = new URL("https://en.wikipedia.org/wiki/Hamster");
+        testingHashMap.put(tagTest, urlTest);
 
+        // Act
+        Bookmark bookmark = new Bookmark();
+        boolean result = bookmark.removeTag(testingHashMap, urlTest);
+
+        // Assert
+        assertTrue(result);
+    }
 }
 
