@@ -101,3 +101,10 @@ we now decided to have to hashmaps that were NOT linked: an URL-hashmap that wou
 as keys; and a rating hashmap that would keep the url as key and the rating as value; 
 for the user it will make no difference, but for us in the backend it will be a lot easier 
 
+###Testing:
+test to see if the urls are valid
+2 tests to add things to our hashmaps
+we test to see if we can find a tagged url
+test to see if we can increase the rating
+test to see if we can remove the tag
+
